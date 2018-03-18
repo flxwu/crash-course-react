@@ -45,6 +45,7 @@
 							<ul style="margin-left:1rem;font-size: 36px;">
 								<li class="fragment fade-up">JS Framework für dynamische User Interfaces</li>
 								<li class="fragment fade-up">Das <em>V</em> in MVC (Model-View-Controller)</li>
+								<li class="fragment fade-up">JSX als HTML-Ersatz</li>
 								<li class="fragment fade-up">Open-Source [github.com/facebook/react](github.com/facebook/react)</li>
 								<li class="fragment fade-up">Beliebtestes Front-End Framework </li>
 							</ul>
@@ -83,14 +84,69 @@
 						<br> Virtual DOM -> Virtuelles Document Object Model, normalerweise bildet DOM die gesamte HTML&CSS-Elementsstruktur einer Seite ab, während Virtual DOM die Representation des UIs im Speicher behält und nur den sichtbaren Teil aktiv lädt. Darauf werde ich aber jetzt genauer eingehen!
 				</textarea>
 			</section>
-			<section data-markdown data-notes="^Note:">
+			<section data-markdown data-notes="^Note:" data-transition="slide-in none-out">
 				<textarea data-template>
 					## <span class="title">Virtual DOM</span>
 					<div class="main">
-						<img class="fragment grow" src="./assets/virtualdom.png" alt="Virtual DOM" width="600px">
+						<img style="margin-top:100px;" class="fragment grow" src="./assets/dom.png" alt="Virtual DOM" width="600px" height="300px">
 					</div>
 					Note: 
-						Normalerweise wird die DOM bei jeder Änderung komplett neu
+						Ich werde jetzt nicht ins Detail gehen, wie die DOM generiert wird, aber in superkurz werden aus HTML und CSS ein Content Model generiert, welches dann mit den jeweiligen Styles gerendert wird.
+						Das Problem: Dies passiert jedes Mal, wenn sich etwas in der DOM ändert. D.h: wenn man mit normaler Javascript DOM-Manipulation ein Element verändert, durchlaufen alle nachgängigen Elemente nochmal den Reflow/Layout-Prozess und werden damit auch neu gerendert.
+						<br>Bei großen Applikationen mit tiefen DOM-Bäumen(also großen Elementshierachien) kann die Seite so sehr langsam werden.   
+				</textarea>
+			</section>
+			<section data-markdown data-notes="^Note:" data-transition="none-in slide-out">
+				<textarea data-template>
+					## <span class="title">Virtual DOM</span>
+					<div class="main">
+						<img class="fragment grow" src="./assets/virtualdom.png" alt="Virtual DOM" width="600px" height="400px">
+					</div>
+					Note: 
+						VirtualDOM versucht diese zwei Prozesse zu minimieren und die Applikation somit weitaus performanter zu machen.
+						<br>Dies geschiet - in kurz, wer will, dem kann ich dies später auch noch näher erklären - indem nur die wirklich visual veränderten Elemente neu gerendert werden.
+				</textarea>
+			</section>
+			<section data-markdown data-notes="^Note:" data-transition="slide-in none-out">
+				<textarea data-template>
+					## <span class="title">Hallo Welt in React</span>
+					```javascript
+						ReactDOM.render(
+							<h1>Hallo Welt!</h1>,
+							document.getElementById('root')
+						);
+					```
+					<h1 style="width:70%;background-color:white;color:black;margin:5rem auto;">
+							Hallo Welt!
+					</h1>	
+					Note:
+						Hier sehen wir eine React Applikation in der simpelsten Variante:
+						<br><b>Und hier mag man sich über den vermeintlichen HTML-Tag wundern, aber das ist JSX</b>.
+						JSX hatte ich ja bereits erwähnt, es ist quasi das Reacts HTML, weswegen man auch alle HTML Tags benutzen kann.
+						<em>Meistens arbeitet man jedoch mit React Components, das sieht dann so aus:</em>
+				</textarea>
+			</section>
+			<section data-markdown data-notes="^Note:" data-transition="none-in slide-out">
+				<textarea data-template>
+					## <span class="title">Hallo Welt in React</span>
+					```javascript
+						class App extends React.Component {
+							render() {
+								return (<div>Hallo {this.props.name}!</div>);
+							}
+						}
+
+						ReactDOM.render(<App name="Frankfurt" />, document.getElementByID('root'));
+					```
+					<div style="width:70%;background-color:white;color:black;margin:4.7rem auto;">
+							Hallo Frankfurt!
+					</div>	
+					Note:
+						Hier können wir dann die Klassen aus EcmaScript 6 benutzen, und hier erbt die Klasse "App" von React.Component
+						<br> React.Component bringt eine render() Methode mit sich, in welcher man JSX zurückgibt, welches dann gerendert wird: <em>In diesem Fall ein div mit Textinhalt</em>, und auch das div kennt man ja aus HTML
+						<br> Einem Component kann man Parameter, sogenannte props, übergeben.
+						<br> Diese Parameter können sowohl Attribute wie hier "Frankfurt", als auch Funktionen sein.
+						Die Parameter werden, wie hier sichtbar, über this.props aufgerufen
 				</textarea>
 			</section>
 		</div>
