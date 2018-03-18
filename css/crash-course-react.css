@@ -7,9 +7,13 @@
 }
 
 .main {
-    margin-top: 4rem !important;
+    margin-top: 2rem !important;
 }
 
 .fab {
     margin: 30px;
+}
+
+li {
+    padding-bottom: 10px !important;
 }
