@@ -40,26 +40,43 @@
 				<textarea data-template>
 					## <span class="title">Was ist React?</span>
 					<div class="main">
-						<img class ="fragment grow" src="./assets/frontendbackend.jpg" width="400px">	
-						<i style="font-size: 7rem;" class="fab fa-facebook-square fragment fade-right"></i>
-						<i style="font-size: 7rem;" class="fab fa-instagram fragment fade-right"></i>
-						<i style="font-size: 7rem;" class="fab fa-whatsapp fragment fade-right"></i>
-						<i style="font-size: 7rem;" class="fab fa-dropbox fragment fade-right"></i>
-						<i style="font-size: 7rem;" class="fab fa-meetup fragment fade-right"></i>
+						<div style="display: block;overflow: auto">
+							<img style="float:left;margin-right: 1rem;" class="fragment fade-in" src="./assets/frontendbackend.jpg" width="500px">	
+							<ul style="margin-left:1rem;font-size: 36px;">
+								<li class="fragment fade-up">JS Framework für dynamische User Interfaces</li>
+								<li class="fragment fade-up">Das <em>V</em> in MVC (Model-View-Controller)</li>
+								<li class="fragment fade-up">Open-Source [github.com/facebook/react](github.com/facebook/react)</li>
+								<li class="fragment fade-up">Beliebtestes Front-End Framework </li>
+							</ul>
+						</div>
+						<div style="display: block;">
+							<i style="font-size: 7rem;" class="fab fa-facebook-square fragment fade-right"></i>
+							<i style="font-size: 7rem;" class="fab fa-instagram fragment fade-right"></i>
+							<i style="font-size: 7rem;" class="fab fa-whatsapp fragment fade-right"></i>
+							<i style="font-size: 7rem;" class="fab fa-dropbox fragment fade-right"></i>
+							<i style="font-size: 7rem;" class="fab fa-meetup fragment fade-right"></i>
+						</div>
 					</div>
 					Note: 
-						ReactJS ist ein Framework für Web Front-Ends, also das was man als Nutzer an einer Webapplikation sieht.
-						<br>ReactJS wurde entwickelt von Facebook, deswegen ist es auch logisch, dass diese es nutzen, jedoch ist ReactJS mittlerweile das sich am schnellsten weiterentwickelnde FrontEnd Framework neben Angular und wird nicht nur monatlich 9 Millionen mal heruntergeladen, sondern auch von großen Firmen wie Facebook(FIRMEN AUFMACHEN!) genutzt.
+						ReactJS ist ein Framework für dynamische Web Front-Ends, also das was man als Nutzer als User Interface einer Webapplikation sieht.
+						<br>In einer typischen Full-Stack Web Applikation mit Model, View und Controller bildet also ReactJS das "View".
+						<br>React wird Open-Source von Facebook, Instagram und Hunderten von individuellen Contributern entwickelt.
+						<br>ReactJS ist das mittlerweile sich am schnellsten weiterentwickelnde FrontEnd Framework neben Angular und wird nicht nur monatlich 9 Millionen mal heruntergeladen, sondern auch von großen Firmen wie Facebook und Instagram(also den Creatorn) sowie WhatsApp und Dropbox oder auch Meetup genutzt.
 				</textarea>
 			</section>
 			<section data-markdown data-notes="^Note:">
 				<textarea data-template>
-					## <span class="title">Was ist React?</span>
-					- Open-Source [github.com/facebook/react](github.com/facebook/react)
-					- "V" in MVC (Model-View-Controller)
-
+					## <span class="title">Wieso React?</span>
+					<ul>
+						<li class="fragment fade-up">Abgekapselte, wiederverwendbare <em>Components</em></li>
+						<li class="fragment fade-up">Dynamischer <em>State</em></li>
+						<li class="fragment fade-up">Virtual DOM</li>
+						<li class="fragment fade-up">Server & Client Rendering</li>
+					</ul>
 					Note: 
-						Notes.
+						React hat einige Vorteile als Front-End:
+						<br> Components -> sozusagen Objekt Orientiert
+						<br> State -> Die ganze Seite ist nicht statisch, Components können sich verändern
 				</textarea>
 			</section>
 		</div>
@@ -76,7 +93,11 @@
 			history: true,
 			controls: false,
 			center: true,
-
+			width: "100%",
+			height: "100%",
+			margin: 0.2,
+			minScale: 1,
+			maxScale: 1,
 			dependencies: [{
 					src: 'plugin/markdown/marked.js'
 				},
