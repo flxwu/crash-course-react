@@ -41,7 +41,7 @@
 					## <span class="title">Was ist React?</span>
 					<div class="main">
 						<div style="display: block;overflow: auto">
-							<img style="float:left;margin-right: 1rem;" class="fragment fade-in" src="./assets/frontendbackend.jpg" width="500px">	
+							<img style="float:left;margin-right: 1rem;" class="fragment fade-in" src="./assets/frontendbackend.jpg" alt="FrontEnd and Backend" width="500px">	
 							<ul style="margin-left:1rem;font-size: 36px;">
 								<li class="fragment fade-up">JS Framework für dynamische User Interfaces</li>
 								<li class="fragment fade-up">Das <em>V</em> in MVC (Model-View-Controller)</li>
@@ -67,16 +67,30 @@
 			<section data-markdown data-notes="^Note:">
 				<textarea data-template>
 					## <span class="title">Wieso React?</span>
-					<ul>
-						<li class="fragment fade-up">Abgekapselte, wiederverwendbare <em>Components</em></li>
-						<li class="fragment fade-up">Dynamischer <em>State</em></li>
-						<li class="fragment fade-up">Virtual DOM</li>
-						<li class="fragment fade-up">Server & Client Rendering</li>
-					</ul>
+					<div class="main">
+						<ul>
+							<li class="fragment fade-up">Abgekapselte, wiederverwendbare <em>Components</em></li>
+							<li class="fragment fade-up">Dynamischer <em>State</em></li>
+							<li class="fragment fade-up">Virtual DOM</li>
+							<li class="fragment fade-up">Unabhängig vom Rest der Applikation</li>
+							<li class="fragment fade-up">Server & Client Rendering</li>
+						</ul>
+					</div>
 					Note: 
 						React hat einige Vorteile als Front-End:
 						<br> Components -> sozusagen Objekt Orientiert
-						<br> State -> Die ganze Seite ist nicht statisch, Components können sich verändern
+						<br> State -> Die ganze Seite ist nicht statisch, Components können sich verändern, ist so gehandhabt, dass jedes Component Zustände, also States hat.
+						<br> Virtual DOM -> Virtuelles Document Object Model, normalerweise bildet DOM die gesamte HTML&CSS-Elementsstruktur einer Seite ab, während Virtual DOM die Representation des UIs im Speicher behält und nur den sichtbaren Teil aktiv lädt. Darauf werde ich aber jetzt genauer eingehen!
+				</textarea>
+			</section>
+			<section data-markdown data-notes="^Note:">
+				<textarea data-template>
+					## <span class="title">Virtual DOM</span>
+					<div class="main">
+						<img class="fragment grow" src="./assets/virtualdom.png" alt="Virtual DOM" width="600px">
+					</div>
+					Note: 
+						Normalerweise wird die DOM bei jeder Änderung komplett neu
 				</textarea>
 			</section>
 		</div>
