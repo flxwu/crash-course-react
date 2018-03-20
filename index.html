@@ -53,7 +53,7 @@
 						<div style="display: block;">
 							<i style="font-size: 7rem;" class="fab fa-facebook-square fragment fade-right"></i>
 							<i style="font-size: 7rem;" class="fab fa-instagram fragment fade-right"></i>
-							<i style="font-size: 7rem;" class="fab fa-whatsapp fragment fade-right"></i>
+								<i style="font-size: 7rem;" class="fab fa-whatsapp fragment fade-right"></i>
 							<i style="font-size: 7rem;" class="fab fa-dropbox fragment fade-right"></i>
 							<i style="font-size: 7rem;" class="fab fa-meetup fragment fade-right"></i>
 						</div>
@@ -147,6 +147,63 @@
 						<br> Einem Component kann man Parameter, sogenannte props, übergeben.
 						<br> Diese Parameter können sowohl Attribute wie hier "Frankfurt", als auch Funktionen sein.
 						Die Parameter werden, wie hier sichtbar, über this.props aufgerufen
+				</textarea>
+			</section>
+			<section data-markdown data-notes="^Note:">
+				<textarea data-template>
+					## <span class="title">Was ich heute zeigen werde:</span>
+					<ul>
+						<li class="fragment fade-up"> Erstellen einer React App </li>
+						<li class="fragment fade-up"> Arbeiten mit <em>Components</em> </li>
+						<li class="fragment fade-up"> <em>JSX</em> und Styling </li>
+						<li class="fragment fade-up"> <em>State</em> und <em>props</em> </li>
+						<li class="fragment fade-up"> Reagieren auf Events </li>
+						<li class="fragment fade-up"> Formulare und Eingaben </li>
+						<li class="fragment fade-up"> <em>(Lifecycle Methods)</em> </li>
+						<li class="fragment fade-up"> Daten von einer API laden (fetch API) </li>
+					</ul>
+					Note:
+						Ich werde Euch heute zeigen, wie 
+						1. Ihr eine React Applikation erstellt
+						2. das Erstellen von Komponenten
+						3. das Arbeiten mit JSX 
+						4. State und properties (Letzteres wurde eben schonmal angeteasert)
+						Dann: Wie man auf Events reagiert und wie man mit Benutzereingaben umgeht
+						Und schlußendlich werden wir auch mithilfe der JavaScript Fetch Api Daten von einer API laden. 
+
+						Wenns zeitlich noch geht den "Zyklus" eines Components, also die Methoden, die bei einem Component aufgerufen werden, von denen das bereits gezeigt "render()" die wichtigste ist.
+				</textarea>
+			</section>
+			<section data-markdown data-notes="^Note:">
+				<textarea data-template>
+					## <span class="title">Was ich <em>nicht</em> zeigen werde:</span>
+					<div class="main">
+						<ul>
+							<li class="fragment fade-up"> Routing / Navigation </li>
+							<li class="fragment fade-up"> Refs (Objectreferenzen) </li>
+							<li class="fragment fade-up"> Keys (Objektidentifikation) </li>
+							<li class="fragment fade-up"> Store/State-management mit Flux / Redux <br><em>(Kommunikation zwischen Komponenten)</em><br></li>
+							<li class="fragment fade-up"> Animationen </li>
+						</ul>
+					</div>
+					Note: 
+						Hier sei angemerkt, dass ReactJS ein *extrem* großes Framework mit tausenden von Erweiterungen ist, weswegen wir nur auf die Basics eingehen können und nicht auf etwas weiterführende Elemente die bei größeren Projekten immer verwendet werden sollten
+				</textarea>
+			</section>
+			<section data-markdown data-notes="^Note:">
+				<textarea data-template class="main">
+					## <span class="title">Setup</span>
+					- Yarn: https://yarnpkg.com/lang/en/docs/install/
+					- NPM: https://nodejs.org/en/download/
+					```bash
+						(sudo) npm install -g create-react-app
+						(sudo) yarn global add create-react-app
+
+						create-react-app my-app
+
+						cd my-app
+						npm start
+					```
 				</textarea>
 			</section>
 		</div>
