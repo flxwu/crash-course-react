@@ -1,7 +1,16 @@
 language: node_js
 node_js:
-  - 4
-before_script:
-  - npm install -g grunt-cli
-after_script:
-  - grunt retire
+  node
+before_install:
+  - npm install -g grunt-cli 
+  - npm install -g bower
+install:
+  - npm install
+  - bower install
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  keep-history: true
+  on:
+    branch: master
