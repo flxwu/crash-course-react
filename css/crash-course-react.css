@@ -7,7 +7,7 @@
 }
 
 .main {
-    margin-top: 4rem !important;
+    margin-top: 3rem !important;
 }
 
 .fab {
@@ -16,4 +16,8 @@
 
 li {
     padding-bottom: 10px !important;
+}
+
+.reveal h2 {
+    margin-top: -1em !important;
 }

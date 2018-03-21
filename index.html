@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
 	<link rel="shortcut icon" href="http://flxwu.com/favicon.png" type="image/x-icon">
 	<title>Crash Course React</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
 
 	<link rel="stylesheet" href="css/reveal.css">
 	<link rel="stylesheet" href="css/theme/black.css">
@@ -23,6 +24,27 @@
 		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
 		document.getElementsByTagName('head')[0].appendChild(link);
 	</script>
+	<style type="text/css">
+		body {
+			font-family: 'Roboto', sans-serif !important;
+		}
+		/* 1. Style header/footer <div> so they are positioned as desired. */
+		#footer {
+			position: absolute;
+			left: 0; 
+			bottom: 3%;
+			right: 0; 
+			margin-left: auto; 
+			margin-right: auto; 
+			width: 45rem;
+			font-family: 'Roboto', sans-serif !important;		
+			font-size: 2rem;
+			font-style: italic;
+		}
+		#footer a {
+			color: aqua;
+		}
+	</style>
 </head>
 
 <body>
@@ -31,10 +53,21 @@
 			<section data-markdown>
 				<textarea data-template>
 					## <span class="head">ReactJS Crash Course</span>
-					![React Banner](./assets/react-banner.png) 
-
+					![React Banner](./assets/react-banner.png) <br>
 					Flexibles und deklaratives Front-End mit React.js
+
+					<a href="flxwu"></a>
 				</textarea>
+				<!-- hidden header/footer -->
+				<div id="hidden" style="display:none;">
+					<div id="header">
+						<div id="footer">
+							<a href="https://twitter.com/flxwu">twitter.com/flxwu</a> / 
+							<a href="https://flxwu.com">flxwu.com</a> /
+							<a href="https://github.com/flxwu">github.com/flxwu</a>
+						</div>
+					</div>
+				</div>
 			</section>
 			<section data-markdown data-notes="^Note:">
 				<textarea data-template>
@@ -88,7 +121,7 @@
 				<textarea data-template>
 					## <span class="title">Virtual DOM</span>
 					<div class="main">
-						<img style="margin-top:100px;" class="fragment grow" src="./assets/dom.png" alt="Virtual DOM" width="600px" height="300px">
+						<img class="fragment grow" src="./assets/dom.png" alt="Virtual DOM" width="650px" height="350px">
 					</div>
 					Note: 
 						Ich werde jetzt nicht ins Detail gehen, wie die DOM generiert wird, aber in superkurz werden aus HTML und CSS ein Content Model generiert, welches dann mit den jeweiligen Styles gerendert wird.
@@ -214,6 +247,19 @@
 		</div>
 	</div>
 
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script type="text/javascript">
+		// 3. On Reveal.js ready event, copy header/footer <div> into each `.slide-background` <div>
+		var header = $('#header').html();
+		if ( window.location.search.match( /print-pdf/gi ) ) {
+			Reveal.addEventListener( 'ready', function( event ) {
+				$('.slide-background').append(header);
+			});
+		}
+		else {
+			$('div.reveal').append(header);
+	}
+	</script>
 	<script src="lib/js/head.min.js"></script>
 	<script src="js/reveal.js"></script>
 
